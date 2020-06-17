@@ -1,81 +1,89 @@
 
 // Menu Mobile
 
-  document.getElementById('hamburguer-icon').addEventListener('click', () => {
+document.getElementById('hamburguer-icon').addEventListener('click', () => {
 
-     document.getElementById('sliding-header-menu-outer').style.right = '0';
+	document.getElementById('sliding-header-menu-outer').style.right = '0';
+})
 
-  })
+document.getElementById('sliding-header-menu-close-button').addEventListener('click', () => {
 
-  document.getElementById('sliding-header-menu-close-button').addEventListener('click', () => {
-
-     document.getElementById('sliding-header-menu-outer').style.right = '-320px';
-
-  })
+	document.getElementById('sliding-header-menu-outer').style.right = '-320px';
+})
 
 
 // About us Tab
 
 var aboutUs = {
-  "Missão": "Fazer com que cada cliente seja reconhecido como autoridade em seu segmento de atuação. Agregar valor ao negócio, potencializar o crescimento das operações e promover e estreitar o relacionamento do cliente com o seu público alvo, por meio da geração de conteúdo de relevância.",
-  "Visão": "Ser reconhecida pelos clientes e pelo mercado como uma empresa parceira, inovadora e criativa, que oferece sempre os melhores produtos e soluções em Comunicação Empresarial Integrada.",
-  "Valores": "<ul><li>Comprometimento</li><li>Inovação</li><li>Ética profissional</li><li>Superação dos resultados</li><li>Melhoria contínua</li></ul>"
+	"Missão": "Fazer com que cada cliente seja reconhecido como autoridade em seu segmento de atuação. Agregar valor ao negócio, potencializar o crescimento das operações e promover e estreitar o relacionamento do cliente com o seu público alvo, por meio da geração de conteúdo de relevância.",
+	"Visão": "Ser reconhecida pelos clientes e pelo mercado como uma empresa parceira, inovadora e criativa, que oferece sempre os melhores produtos e soluções em Comunicação Empresarial Integrada.",
+	"Valores": "<ul><li>Comprometimento</li><li>Inovação</li><li>Ética profissional</li><li>Superação dos resultados</li><li>Melhoria contínua</li></ul>"
 };
 
 var unselected_color = "#646872";
 var seletected_color = "#2A2D34";
 
+var about_tags = document.getElementsByClassName('single-tab');
 
-var about_tags =  document.getElementsByClassName('single-tab');
+for (var i = 0; i < about_tags.length; i++) {
 
-for(var i =0; i < about_tags.length; i++){
+	about_tags[i].addEventListener('click', function () {
 
-  about_tags[i].addEventListener('click', function () {
+		var selecionado = this.innerHTML;
 
-    for(var b = 0; b < about_tags.length; b++){
-      about_tags[b].style['background-color'] = unselected_color;
-      this.style['font-weight'] = 'normal';
-    }
+		for (var x = 0; x < about_tags.length; x++) {
 
-    this.style['background-color'] = seletected_color;
-    this.style['font-weight'] = 'bold';
+			about_tags[x].style['background-color'] = unselected_color;
+			about_tags[x].style['font-weight'] = 'normal';
+		}
+		this.style['background-color'] = seletected_color;
+		this.style['font-weight'] = 'bold';
 
-    var selecionado = this.innerHTML;
-
-     document.getElementById('box-text').innerHTML = aboutUs[selecionado]
-
-  });
+		 document.getElementById('box-text').innerHTML = aboutUs[selecionado]
+	})
 
 }
+
 
 
 // Slider de serviços
 
 var our_services = [
-  {
-    'title': 'Webdesign',
-    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus tincidunt sem non sodales. Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi.'
-  },
+	{
+		'title': 'Webdesign',
+		'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus tincidunt sem non sodales. Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi.'
+	},
 
-  {
-    'title': 'Branding',
-    'text': 'Praesent finibus tincidunt sem non sodales. Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi.'
-  },
+	{
+		'title': 'Branding',
+		'text': 'Praesent finibus tincidunt sem non sodales. Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi.'
+	},
 
-  {
-    'title': 'Marketing Digital',
-    'text': 'Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus.'
-  }
-  
+	{
+		'title': 'Marketing Digital',
+		'text': 'Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus.'
+	}
+
 ];
+
+/*
+
+service-previous
+service-next
+service-title
+service-text
+
+*/
+
 
 
 // Data Footer
 
+// current_year
 
 
-  
-   
 
 
-   
+
+
+
